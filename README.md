@@ -4,9 +4,6 @@
 
 ## Installation
 
-> [!IMPORTANT]
-> These dotfiles use OpenSUSE package names which don't always match other distros package names.
-
 > [!WARNING]
 > If you want to try my dotfiles, please fork this repository, review the code, and remove things you don't want or need.
 >
@@ -17,4 +14,4 @@
 3. Make `~/.local/user/gitconf_local` with git "user" information (name, email, signing key, etc).
 
 ## License
-Copyright (c) 2022 Ryan Hendrickson. Released under the MIT License. See [LICENSE](LICENSE) for details.
+Copyright (c) 2024 Ryan Hendrickson. Released under the MIT License. See [LICENSE](LICENSE) for details.
