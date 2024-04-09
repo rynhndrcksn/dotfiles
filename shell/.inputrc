@@ -1,0 +1,69 @@
+# Author: Ryan H.
+# Filename: .inputrc
+#
+# Control the behaviour of the readline library used e.g.
+# by the bash in the interactive mode for line editing.
+#
+# Resources:
+#  https://ss64.com/bash/syntax-inputrc.html
+#  https://wiki.archlinux.org/title/Readline
+
+#
+# The bell style used e.g. on error or tab completion, possible values
+# are `none', `visible', and `audible' the ringing the bell.
+#
+set bell-style none
+
+#
+# Color files by type.
+#
+set colored-stats on
+
+#
+# Color the common prefix.
+#
+set colored-completion-prefix on
+
+#
+# If set to 'on', Readline performs filename matching and completion in a
+# case-insensitive fashion.
+# The default value is 'off'.
+#
+set completion-ignore-case on
+
+#
+# Disable '^C' from being displayed after 'Ctrl+c' is pressed.
+#
+set echo-control-characters off
+
+#
+# If set to 'on', completed names which are symbolic links to directories have
+# a slash appended (subject to the value of 'mark-directories' (default on)).
+#
+set mark-symlinked-directories on
+
+#
+# Color the common prefix in menu-complete.
+#
+set menu-complete-display-prefix on
+
+#
+# If set to 'on', words which have more than one possible completion cause the
+# matches to be listed immediately instead of ringing the bell.
+#
+set show-all-if-ambiguous on
+
+#
+# If set to on, words which have more than one possible completion without
+# any possible partial completion cause the matches to be listed immediately
+# instead of ringing the bell.
+#
+#set show-all-if-unmodified on
+
+#
+# If set to 'on', a character denoting a file's type is appended to the filename
+# when listing possible completions.
+# The default is 'off'.
+#
+set visible-stats on
+
