@@ -1,0 +1,13 @@
+[user]
+  name = <placeholder>
+  email = <placeholder>
+  signingkey = <placeholder>
+[color]
+  ui=auto
+[commit]
+  gpgsign = true
+  template = ~/.local/user/gittemplate
+[include]
+  path = ~/.local/user/gitconf_local
+[init]
+  defaultBranch = main
