@@ -4,6 +4,7 @@
 
 alias a='php artisan'
 alias bg='batgrep'
+alias bm='batman'
 alias code='codium'
 alias com='composer'
 alias con='php bin/console'
