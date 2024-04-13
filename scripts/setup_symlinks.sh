@@ -13,7 +13,6 @@ USER_DIR="$HOME/.local/user"
 if [ ! -d "$USER_DIR" ]; then
   mkdir -p "$USER_DIR"
 fi
-exit;
 
 ####################
 # config directory #
