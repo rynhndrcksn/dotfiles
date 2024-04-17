@@ -11,6 +11,6 @@ if [ -f "N_PREFIX/bin/node" ]; then
 else
   printf '\n<~ Installing n and Node LTS ~>\n'
   curl -L https://bit.ly/n-install | bash
-if
+fi
 
 printf '\n<~ Finished Node setup ~>\n'
