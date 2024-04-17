@@ -66,3 +66,5 @@ HISTCONTROL="erasedups:ignoreboth"
 
 # don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
