@@ -22,6 +22,6 @@ while true; do
     esac
 done
 
-printf '\n<~ Packages have been installed! ~>\n'
+printf '\n<~ Packages have been installed! ~>\n\n'
 
 bat cache --build
