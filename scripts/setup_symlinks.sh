@@ -3,8 +3,6 @@
 # Filename: setup_symlinks.sh
 # Setup symbolic links for various files/directories.
 
-printf "\n<~ Setting up symbolic links for \$DOTFILES... ~>\n"
-
 CONFIG_DIR="$HOME/.config"
 DOTFILES_DIR="$HOME/.dotfiles"
 GNUPG_DIR="$HOME/.gnupg"
@@ -56,7 +54,7 @@ ln -s "$DOTFILES_DIR/git/gittemplate" "$USER_DIR/gittemplate"
 
 # gpg-agent.conf
 rm "$GNUPG_DIR/gpg-agent.conf"
-ln -s "$DOTFILES_DIR/gnupg/gpg-agent.conf" "$GNUPG_DIR/gpg-agent.conf"
+ln -s "$DOTFILES_DIR/config/gnupg/gpg-agent.conf" "$GNUPG_DIR/gpg-agent.conf"
 
 ###################
 # shell directory #
@@ -82,4 +80,4 @@ ln -s "$DOTFILES_DIR/shell/.profile" "$HOME/.profile"
 rm "$USER_DIR/git_prompt.sh"
 ln -s "$DOTFILES_DIR/shell/git_prompt.sh" "$USER_DIR/git_prompt.sh"
 
-printf "\n<~ Done setting up symbolic links for \$DOTFILES ~>\n\n"
+printf "\n<~ Done setting up symbolic links for \$DOTFILES ~>\n"
