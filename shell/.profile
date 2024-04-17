@@ -15,3 +15,6 @@ export DOTFILES="$HOME/.dotfiles"
 
 # Changes <<< to use bat instead of cat (default).
 export NULLCMD='bat'
+
+# Symfony CLI
+export PATH="$HOME/.symfony5/bin:$PATH"
