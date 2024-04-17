@@ -35,7 +35,7 @@ shopt -s cmdhist
 # attempts spelling correction on directory names during word completion
 shopt -s dirspell 
 
-# filenames beginning with a '.' show in resutls of filename expansion
+# filenames beginning with a '.' show in results of filename expansion
 shopt -s dotglob 
 
 # enables extended pattern matching features
@@ -67,4 +67,12 @@ HISTCONTROL="erasedups:ignoreboth"
 # don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+#
+# Exports
+#
+
+# Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
+# Symfony CLI binary
+export PATH="$HOME/.symfony5/bin:$PATH"
