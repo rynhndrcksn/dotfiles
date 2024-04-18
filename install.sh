@@ -9,7 +9,7 @@ while true; do
     printf '\t1) Setup symlinks\n'
     printf '\t2) Install packages\n'
     printf '\t3) Setup n, a node version manager\n'
-    printf '\t4) Setup Symfony CLI\n'
+    printf '\t4) Setup Symfony CLI with curl\n'
     printf '\tQ) Exit the installer\n'
     printf '\nPlease enter your selection: '
     read -r opt
