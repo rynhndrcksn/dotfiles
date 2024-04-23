@@ -76,8 +76,4 @@ ln -s "$DOTFILES_DIR/shell/.inputrc" "$HOME/.inputrc"
 rm -rf "$HOME/.profile"
 ln -s "$DOTFILES_DIR/shell/.profile" "$HOME/.profile"
 
-# git_prompt.sh
-rm "$USER_DIR/git_prompt.sh"
-ln -s "$DOTFILES_DIR/shell/git_prompt.sh" "$USER_DIR/git_prompt.sh"
-
 printf "\n<~ Done setting up symbolic links for \$DOTFILES ~>\n"
