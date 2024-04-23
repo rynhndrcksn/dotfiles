@@ -7,14 +7,11 @@
 # settings made here will also take effect in a login shell.
 
 # aliases
-source ~/.alias
-
-# needed for git branch info in prompt
-source ~/.local/user/git_prompt.sh
+source "$HOME/.alias"
 
 # change prompt (https://bash-prompt-generator.org/):
 # more info: https://misc.flogisoft.com/bash/tip_colors_and_formatting
-PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "[%s]")'; PS1='\n\[\e[38;5;51;3m\]\w\[\e[0m\] \[\e[38;5;213m\]${PS1_CMD1}\n\[\e[38;5;2m\]->\[\e[0m\] '
+PS1='\n\[\e[38;5;51;3m\]\w\n\[\e[38;5;2m\]->\[\e[0m\] '
 
 #
 # set BASH shopts
@@ -73,3 +70,4 @@ export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
 
 # Added by n-install (see http://git.io/n-install-repo).
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
