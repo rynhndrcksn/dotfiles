@@ -12,5 +12,9 @@ neofetch
 neovim
 php8
 php-composer2
+php8-ctype
+php8-dom
+php8-iconv
+php8-tokenizer
 ripgrep
 ShellCheck
