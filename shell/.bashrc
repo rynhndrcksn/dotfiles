@@ -67,6 +67,8 @@ export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
 #
 # Keychain
 #
+# Only needed for windows, but makes ssh-agent persist between WSL sessions.
+# https://esc.sh/blog/ssh-agent-windows10-wsl2/
 
 /usr/bin/keychain -q --nogui "$HOME/.ssh/id_ed25519_github"
 source "$HOME/.keychain/$(hostname)-sh"
