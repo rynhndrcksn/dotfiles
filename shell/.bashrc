@@ -65,6 +65,13 @@ HISTCONTROL="erasedups:ignoreboth"
 export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
 
 #
+# Keychain
+#
+
+/usr/bin/keychain -q --nogui "$HOME/.ssh/id_ed25519_github"
+source "$HOME/.keychain/$(hostname)-sh"
+
+#
 # Exports
 #
 
