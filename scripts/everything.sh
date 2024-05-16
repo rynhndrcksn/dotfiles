@@ -6,3 +6,4 @@
 sh setup_symlinks.sh
 sh install_packages.sh
 sh setup_n.sh
+curl -sS https://get.symfony.com/cli/installer | bash
