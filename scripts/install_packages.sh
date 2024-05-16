@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 # Author: Ryan Hendrickson
 # Filename: install_packages.sh
 # Install all the packages located in packages.list

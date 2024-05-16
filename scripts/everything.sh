@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 # Author: Ryan Hendrickson
 # Filename: everything.sh
 # Runs all the options from install.sh

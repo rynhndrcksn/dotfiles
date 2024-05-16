@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 # Author: Ryan Hendrickson
 # Filename: install.sh
 # Displays options for the installer to execute.

@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 # Author: Ryan Hendrickson
 # Filename: setup_symlinks.sh
 # Setup symbolic links for various files/directories.

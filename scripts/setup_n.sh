@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 # Author: Ryan Hendrickson
 # Filename: setup_n.sh
 # Installs 'n' and Node LTS.
