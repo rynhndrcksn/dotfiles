@@ -3,6 +3,9 @@ bat
 bat-extras
 btop
 dash
+docker
+docker-bash-completion
+docker-compose
 eza
 fzf
 gcc
