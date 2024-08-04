@@ -11,3 +11,5 @@
   path = ~/.local/user/gitconf_local
 [init]
   defaultBranch = main
+[push]
+  autoSetupRemote = true
