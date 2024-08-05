@@ -14,10 +14,10 @@ while true; do
     printf '\nPlease enter your selection: '
     read -r opt
     case $opt in
-        [0]* ) sh scripts/everything.sh; continue;;
-        [1]* ) sh scripts/setup_symlinks.sh; continue;;
-        [2]* ) sh scripts/install_packages.sh; continue;;
-        [3]* ) sh scripts/setup_n.sh; continue;;
+        [0]* ) sh "$PWD/scripts/everything.sh"; continue;;
+        [1]* ) sh "$PWD/scripts/setup_symlinks.sh"; continue;;
+        [2]* ) sh "$PWD/scripts/install_packages.sh"; continue;;
+        [3]* ) sh "$PWD/scripts/setup_n.sh"; continue;;
         [4]* ) curl -sS https://get.symfony.com/cli/installer | bash; continue;;
         [Qq]* ) printf '\nA terminal restart may be necessary for changes to take affect\n'; exit;;
         * ) printf '\n\nPlease enter a valid option\n';;
