@@ -28,5 +28,6 @@ php8-opcache
 php8-pgsql
 php8-tokenizer
 php8-xdebug
+php8-xsl
 ripgrep
 ShellCheck
