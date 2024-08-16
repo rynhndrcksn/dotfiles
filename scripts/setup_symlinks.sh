@@ -17,23 +17,33 @@ fi
 ####################
 
 # bat
-rm -rf "$CONFIG_DIR/bat"
+if [ -d "$CONFIG_DIR/bat" ]; then
+    rm -rf "$CONFIG_DIR/bat"
+fi
 ln -s "$DOTFILES_DIR/config/bat" "$CONFIG_DIR/bat"
 
 # btop
-rm -rf "$CONFIG_DIR/btop"
+if [ -d "$CONFIG_DIR/btop" ]; then
+    rm -rf "$CONFIG_DIR/btop"
+fi
 ln -s "$DOTFILES_DIR/config/btop" "$CONFIG_DIR/btop"
 
 # ideavim
-rm -rf "$HOME/.ideavimrc"
+if [ -f "$HOME/.ideavimrc" ]; then
+    rm -rf "$HOME/.ideavimrc"
+fi
 ln -s "$DOTFILES_DIR/config/ideavim/.ideavimrc" "$HOME/.ideavimrc"
 
 # nvim
-rm -rf "$CONFIG_DIR/nvim"
+if [ -d "$CONFIG_DIR/nvim" ]; then
+    rm -rf "$CONFIG_DIR/nvim"
+fi
 ln -s "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 # wezterm
-rm -rf "$CONFIG_DIR/wezterm"
+if [ -d "$CONFIG_DIR/wezterm" ]; then
+    rm -rf "$CONFIG_DIR/wezterm"
+fi
 ln -s "$DOTFILES_DIR/config/wezterm" "$CONFIG_DIR/wezterm"
 
 #################
@@ -41,11 +51,15 @@ ln -s "$DOTFILES_DIR/config/wezterm" "$CONFIG_DIR/wezterm"
 #################
 
 # gitconfig
-rm "$HOME/.gitconfig"
+if [ -f "$HOME/.gitconfig" ]; then
+    rm "$HOME/.gitconfig"
+fi
 ln -s "$DOTFILES_DIR/git/gitconfig_global" "$HOME/.gitconfig"
 
 # gittemplate
-rm "$USER_DIR/gittemplate"
+if [ -f "$USER_DIR/gittemplate" ]; then
+    rm "$USER_DIR/gittemplate"
+fi
 ln -s "$DOTFILES_DIR/git/gittemplate" "$USER_DIR/gittemplate"
 
 ###################
@@ -53,27 +67,41 @@ ln -s "$DOTFILES_DIR/git/gittemplate" "$USER_DIR/gittemplate"
 ###################
 
 # gpg-agent.conf
-rm "$GNUPG_DIR/gpg-agent.conf"
+if [ -f "$GNUPG_DIR/gpg-agent.conf" ]; then
+    rm "$GNUPG_DIR/gpg-agent.conf"
+fi
 ln -s "$DOTFILES_DIR/config/gnupg/gpg-agent.conf" "$GNUPG_DIR/gpg-agent.conf"
 
 ###################
 # shell directory #
 ###################
 
-# .alias
-rm "$HOME/.alias"
-ln -s "$DOTFILES_DIR/shell/.alias" "$HOME/.alias"
+# .aliases
+if [ -f "$HOME/.aliases" ]; then
+    rm "$HOME/.aliases"
+fi
+ln -s "$DOTFILES_DIR/shell/.aliases" "$HOME/.aliases"
+
+# .bash_profile
+if [ -f "$HOME/.bash_profile" ]; then
+    rm -rf "$HOME/.bash_profile"
+fi
+ln -s "$DOTFILES_DIR/shell/.bash_profile" "$HOME/.bash_profile"
 
 # .bashrc
-rm -rf "$HOME/.bashrc"
+if [ -f "$HOME/.bashrc" ]; then
+    rm -rf "$HOME/.bashrc"
+fi
 ln -s "$DOTFILES_DIR/shell/.bashrc" "$HOME/.bashrc"
 
 # .inputrc
-rm -rf "$HOME/.inputrc"
+if [ -f "$HOME/.inputrc" ]; then
+    rm -rf "$HOME/.inputrc"
+fi
 ln -s "$DOTFILES_DIR/shell/.inputrc" "$HOME/.inputrc"
 
-# .profile
-rm -rf "$HOME/.profile"
-ln -s "$DOTFILES_DIR/shell/.profile" "$HOME/.profile"
+########
+# done #
+########
 
 printf "\n<~ Done setting up symbolic links for \$DOTFILES ~>\n"

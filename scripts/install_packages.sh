@@ -3,12 +3,8 @@
 # Filename: install_packages.sh
 # Install all the packages located in packages.list
 
-printf '\n<~ Running "sudo zypper refresh && sudo zypper dist-upgrade" before installing packages ~>\n'
-sudo zypper refresh
-sudo zypper dist-upgrade
-
-#printf '\n<~ Running `sudo zypper update` before installing packages ~>\n'
-#sudo zypper update
+printf '\n<~ Running "sudo dnf upgrade" before installing packages ~>\n'
+sudo dnf upgrade
 
 while true; do
     printf '\n<~ These are the packages that will be installed from scripts/packages.list: ~>\n'
@@ -16,7 +12,7 @@ while true; do
     printf '\nContinue with installation? (y/n) '
     read -r opt
     case $opt in
-        [Yy]* ) xargs sudo zypper --non-interactive install < "$HOME/.dotfiles/scripts/packages.list"; break;;
+        [Yy]* ) xargs sudo dnf install -y < "$HOME/.dotfiles/scripts/packages.list"; break;;
         [Nn]* ) exit;;
         * ) printf "\nPlease answer yes or no.\n";;
     esac
