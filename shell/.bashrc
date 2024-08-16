@@ -1,13 +1,19 @@
 # Author: Ryan Hendrickson
 # Filename: .bashrc
-#
-# There are 3 different types of shells in bash: the login shell, normal shell
-# and interactive shell. Login shells read ~/.profile and interactive shells
-# read ~/.bashrc; in OpenSUSE's setup, /etc/profile sources ~/.bashrc - thus all
-# settings made here will also take effect in a login shell.
+
+# source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# user specific environment
+if ! [[ "$PATH" =~ $HOME/.local/bin:$HOME/bin: ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
 
 # aliases
-source "$HOME/.alias"
+source "$HOME/.aliases"
 
 # change prompt (https://bash-prompt-generator.org/):
 # more info: https://misc.flogisoft.com/bash/tip_colors_and_formatting
@@ -65,21 +71,23 @@ HISTCONTROL="erasedups:ignoreboth"
 export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
 
 #
-# Keychain
-#
-# Only needed for windows, but makes ssh-agent persist between WSL sessions.
-# https://esc.sh/blog/ssh-agent-windows10-wsl2/
-
-/usr/bin/keychain -q --nogui "$HOME/.ssh/id_ed25519_github"
-source "$HOME/.keychain/$(hostname)-sh"
-
-#
 # Exports
 #
 
 # Import local dev credentials:
 source "$HOME/.creds"
 
+# Changes <<< to use bat instead of cat (default).
+export NULLCMD='bat'
+
+# Add $DOTFILES variable for absolute path to ~/.dotfiles.
+export DOTFILES="$HOME/.dotfiles"
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
 # Added by n-install (see http://git.io/n-install-repo).
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
+# Symfony CLI
+export PATH="$HOME/.symfony5/bin:$PATH"

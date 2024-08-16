@@ -1,10 +1,16 @@
 # Author: Ryan Hendrickson
-# Filename: .profile
+# Filename: .bash_profile
 # 
 # This file is read each time a login shell is started.
 # All other interactive shells will only read .bashrc
 
+# Source /etc/profile if login shell
 test -z "$PROFILEREAD" && . /etc/profile || true
+
+# Get the aliases and functions
+if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+fi
 
 ###############
 # Set Exports #
