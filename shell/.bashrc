@@ -6,14 +6,11 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-# user specific environment
-if ! [[ "$PATH" =~ $HOME/.local/bin:$HOME/bin: ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
-
-# aliases
+# Import aliases.
 source "$HOME/.aliases"
+
+# Import local credentials.
+source "$HOME/.creds"
 
 # change prompt (https://bash-prompt-generator.org/):
 # more info: https://misc.flogisoft.com/bash/tip_colors_and_formatting
@@ -67,27 +64,32 @@ HISTFILESIZE=100000
 # avoid duplicate entries
 HISTCONTROL="erasedups:ignoreboth"
 
-# don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
-
 #
 # Exports
 #
 
-# Import local dev credentials:
-source "$HOME/.creds"
+# don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:lla:ll:bg:fg:history:clear"
 
-# Changes <<< to use bat instead of cat (default).
-export NULLCMD='bat'
+# Add $N_PREFIX for 'n' (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/n"
 
-# Add $DOTFILES variable for absolute path to ~/.dotfiles.
-export DOTFILES="$HOME/.dotfiles"
+#
+# Path manipulation
+#
 
-# Go
-export PATH=$PATH:/usr/local/go/bin
+paths=(
+    "/usr/local/go/bin"
+    "$N_PREFIX/bin"
+    "$HOME/go/bin"
+    "$HOME/bin"
+    "$HOME/.symfony5/bin"
+    "$HOME/.local/bin"
+)
 
-# Added by n-install (see http://git.io/n-install-repo).
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+for path in "${paths[@]}"; do
+    if ! [[ ":$PATH:" =~ :$path: ]]; then
+        PATH="$path:$PATH"
+    fi
+done
 
-# Symfony CLI
-export PATH="$HOME/.symfony5/bin:$PATH"
