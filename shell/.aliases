@@ -22,7 +22,7 @@ alias ll='eza -laghF --git --icons --color=always'
 alias lla='ls -lhFA'
 alias nvimconf='vim $HOME/.config/nvim/'
 alias pla='cd $HOME/playground/'
-alias ppath="echo $PATH | tr ':' '\n'"
+alias ppath="echo \"$PATH\" | tr ':' '\n'"
 alias pro='cd $HOME/projects/'
 alias pu='./vendor/bin/phpunit'
 alias puu='./vendor/bin/phpunit --testdox'
