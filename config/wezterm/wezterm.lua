@@ -23,7 +23,6 @@ config.cursor_blink_rate = 1000
 config.default_cursor_style = 'BlinkingBar'
 config.font = wezterm.font 'JetBrainsMono NF'
 config.hide_tab_bar_if_only_one_tab = true
-config.window_decorations = "TITLE"
 
 -- keybindings
 
