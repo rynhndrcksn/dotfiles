@@ -93,3 +93,11 @@ for path in "${paths[@]}"; do
     fi
 done
 
+#
+# Functions
+#
+
+# Quick cd using fzf
+fcd() {
+    cd "$(find -type d | fzf --preview 'tree -C {} | head -200' --preview-window 'up:60%')"
+}
