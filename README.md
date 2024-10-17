@@ -1,6 +1,6 @@
 # Dotfiles
 
-> My dotfiles for configuring Linux, specifically OpenSUSE Tumbleweed, as automatically as possible.
+> My dotfiles for configuring Linux, specifically Fedora, as automatically as possible.
 
 ## Installation
 
