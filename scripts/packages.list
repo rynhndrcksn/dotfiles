@@ -1,6 +1,9 @@
 bat
 bat-zsh-completion
 btop
+docker
+docker-compose
+docker-zsh-completion
 eza
 eza-zsh-completion
 git-core
