@@ -19,3 +19,4 @@ export DOTFILES="$HOME/.dotfiles"
 # Changes <<< to use bat instead of cat (default).
 export NULLCMD='bat'
 
+. "$HOME/.cargo/env"

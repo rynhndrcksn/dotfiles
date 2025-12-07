@@ -28,6 +28,7 @@ return {
       -- list of servers for mason to install
       -- list can be found here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
       ensure_installed = {
+	"ansiblels",
         "bashls",
         "cssls",
         "gopls",
@@ -36,8 +37,9 @@ return {
         "lua_ls",
         "marksman",
         "phpactor",
+	"rust_analyzer",
         "tailwindcss",
-        "tsserver",
+        "ts_ls",
         "yamlls",
       },
       -- auto-install configured servers (with lspconfig)
@@ -47,6 +49,7 @@ return {
     -- list can be found here: https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
     mason_tool_installer.setup({
       ensure_installed = {
+	"ansible-lint",
         -- "bash-language-server", -- self explanatory
         "golangci-lint",     -- go linter
         "markdownlint-cli2", -- markdown linter

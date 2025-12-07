@@ -8,6 +8,14 @@ DOTFILES_DIR="$HOME/.dotfiles"
 GNUPG_DIR="$HOME/.gnupg"
 USER_DIR="$HOME/.local/user"
 
+if [ ! -d "$CONFIG_DIR" ]; then
+  mkdir -p "$CONFIG_DIR"
+fi
+
+if [ ! -d "$GNUPG_DIR" ]; then
+  mkdir -p "$GNUPG_DIR"
+fi
+
 if [ ! -d "$USER_DIR" ]; then
   mkdir -p "$USER_DIR"
 fi
@@ -82,6 +90,8 @@ if [ -f "$HOME/.aliases" ]; then
 fi
 ln -s "$DOTFILES_DIR/shell/.aliases" "$HOME/.aliases"
 
+# Bash
+
 # .bash_profile
 if [ -f "$HOME/.bash_profile" ]; then
     rm -rf "$HOME/.bash_profile"
@@ -99,6 +109,18 @@ if [ -f "$HOME/.inputrc" ]; then
     rm -rf "$HOME/.inputrc"
 fi
 ln -s "$DOTFILES_DIR/shell/.inputrc" "$HOME/.inputrc"
+
+# Zsh
+
+if [ -f "$HOME/.zshenv" ]; then
+    rm -rf "$HOME/.zshenv"
+fi
+ln -s "$DOTFILES_DIR/shell/.zshenv" "$HOME/.zshenv"
+
+if [ -f "$HOME/.zshrc" ]; then
+    rm -rf "$HOME/.zshrc"
+fi
+ln -s "$DOTFILES_DIR/shell/.zshrc" "$HOME/.zshrc"
 
 ########
 # done #

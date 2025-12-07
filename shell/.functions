@@ -1,0 +1,14 @@
+# Author: Ryan H.
+# Filename: .functions
+# Contains useful functions.
+
+# Make a new directory(ies) and CD into it.
+function mkcd() {
+    mkdir -p "$@" && cd "$_";
+}
+
+# Checks if a specific command exists.
+# command -v is a more reliable version of which (guaranteed to run on more systems natively)
+function exists() {
+    command -v $1 >/dev/null 2>&1 #2>&1 is redirecting the STDERR to the same place as STDOUT (/dev/null)
+}
