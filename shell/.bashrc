@@ -101,3 +101,4 @@ done
 fcd() {
     cd "$(find -type d | fzf --preview 'tree -C {} | head -200' --preview-window 'up:60%')"
 }
+. "$HOME/.cargo/env"

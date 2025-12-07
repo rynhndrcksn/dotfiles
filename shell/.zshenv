@@ -2,27 +2,9 @@
 # Filename: .zshenv
 # Imports things needed for any and all shells.
 
-##################
-# $path settings #
-##################
-
-# This forces $path to only hold unique values.
-typeset -U path
-
-# Add our special stuff to $path then add everything already in $path.
-path=(
-    "$N_PREFIX/bin"
-    "$HOME/go/bin"
-    "$HOME/.cargo/env"
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
-    $path
-)
-
-. "$HOME/.cargo/env"
-
 # Have 'n' install to ~/.n instead of /usr/local
 export N_PREFIX="$HOME/.n"
 
 # Set 'bat's config location
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
+. "$HOME/.cargo/env"

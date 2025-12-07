@@ -2,6 +2,8 @@
 # Filename: .zshrc
 # Holds a bunch of imports that hold the important stuff to help keep things modular/easy to update.
 
+source "$HOME/.aliases"
+
 #################
 # Set variables #
 #################
@@ -35,6 +37,24 @@ fpath+="$HOME/.zfunc"
 autoload -Uz compinit && compinit
 
 ##################
+# $path settings #
+##################
+
+# This forces $path to only hold unique values.
+typeset -U path
+
+# Add our special stuff to $path then add everything already in $path.
+path=(
+    "$N_PREFIX/bin"
+    "$HOME/go/bin"
+    "$HOME/.cargo/env"
+    "$HOME/.symfony5/bin"
+    $path
+)
+
+. "$HOME/.cargo/env"
+
+##################
 # Sourcing Files #
 ##################
 
@@ -46,3 +66,4 @@ eval "$(symfony self:completion zsh)"
 ####################
 
 eval "$(starship init zsh)"
+
