@@ -12,6 +12,7 @@ gtk3-tools
 libgthread-2_0-0
 libgtk-3-0
 make
+mozilla-nss-tools
 neovim
 php8
 php8-APCu
