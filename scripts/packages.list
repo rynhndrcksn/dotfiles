@@ -8,6 +8,9 @@ eza
 eza-zsh-completion
 git-core
 go
+gtk3-tools
+libgthread-2_0-0
+libgtk-3-0
 make
 neovim
 php8
