@@ -2,7 +2,6 @@
 # Filename: .zshrc
 # Holds a bunch of imports that hold the important stuff to help keep things modular/easy to update.
 
-source "$HOME/.aliases"
 
 #################
 # Set variables #
@@ -17,9 +16,16 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # Changes <<< to use bat instead of cat (default).
 export NULLCMD='bat'
 
+# Set bat's config location
+export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
+
 ######################
 # Change ZSH options #
 ######################
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+
+setopt EXTENDED_HISTORY # Add timestamps to history entries.
 setopt autoCd # Allows you to type in a directory to cd into it.
 setopt globDots # Shows hidden files/directories without typing a .
 
@@ -35,6 +41,16 @@ fpath+="$HOME/.zfunc"
 
 # Load "new" completion system for ZSH
 autoload -Uz compinit && compinit
+
+# Source zsh-syntax-highlighting
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+####################
+# Customize prompt #
+####################
+
+eval "$(starship init zsh)"
 
 ##################
 # $path settings #
@@ -58,12 +74,11 @@ path=(
 # Sourcing Files #
 ##################
 
+# Load aliases.
+source "$HOME/.aliases"
+
 # Load symfony-cli completions.
 eval "$(symfony self:completion zsh)"
 
-####################
-# Customize prompt #
-####################
-
-eval "$(starship init zsh)"
-
+# Enable searching ZSH history with fzf using ctrl + r
+source <(fzf --zsh)
