@@ -1,7 +1,11 @@
 bat
 btop
 composer
+containerd
 dash
+docker-cli
+docker-compose
+docker-compose-switch
 discord
 fzf
 gcc
