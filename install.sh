@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # Author: Ryan Hendrickson
 # Displays options for the installer to execute.
 
