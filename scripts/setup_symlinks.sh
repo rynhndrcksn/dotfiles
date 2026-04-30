@@ -36,6 +36,12 @@ if [ -d "$CONFIG_DIR/btop" ]; then
 fi
 ln -s "$DOTFILES_DIR/config/btop" "$CONFIG_DIR/btop"
 
+# helix
+if [ -d "$CONFIG_DIR/helix" ]; then
+    rm -rf "$CONFIG_DIR/helix"
+fi
+ln -s "$DOTFILES_DIR/config/helix" "$CONFIG_DIR/helix"
+
 # ideavim
 if [ -f "$HOME/.ideavimrc" ]; then
     rm -rf "$HOME/.ideavimrc"
