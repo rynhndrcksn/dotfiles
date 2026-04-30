@@ -3,8 +3,8 @@
 # Filename: install_packages.sh
 # Install all the packages located in packages.list
 
-printf '\n<~ Running "sudo dnf upgrade" before installing packages ~>\n'
-sudo dnf upgrade
+printf '\n<~ Running "sudo apt upgrade" before installing packages ~>\n'
+sudo apt upgrade
 
 while true; do
     printf '\n<~ These are the packages that will be installed from scripts/packages.list: ~>\n'
@@ -12,7 +12,7 @@ while true; do
     printf '\nContinue with installation? (y/n) '
     read -r opt
     case $opt in
-        [Yy]* ) xargs sudo dnf in -y < "$HOME/.dotfiles/scripts/packages.list"; break;;
+        [Yy]* ) xargs sudo apt install -y < "$HOME/.dotfiles/scripts/packages.list"; break;;
         [Nn]* ) exit;;
         * ) printf "\nPlease answer yes or no.\n";;
     esac
