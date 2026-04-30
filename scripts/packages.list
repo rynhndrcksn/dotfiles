@@ -8,6 +8,7 @@ docker-compose
 eza
 fzf
 gcc
+jq
 make
 ripgrep
 shellcheck
