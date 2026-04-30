@@ -61,7 +61,9 @@ typeset -U path
 
 # Add our special stuff to $path then add everything already in $path.
 path=(
+    "$HOME/.local/bin"
     "$N_PREFIX/bin"
+    "$HOME/.local/go/bin"
     "$HOME/go/bin"
     "$HOME/.cargo/env"
     "$HOME/.symfony5/bin"
