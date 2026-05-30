@@ -36,17 +36,17 @@ if [ -d "$CONFIG_DIR/btop" ]; then
 fi
 ln -s "$DOTFILES_DIR/config/btop" "$CONFIG_DIR/btop"
 
+# ghostty
+if [ -d "$CONFIG_DIR/ghostty" ]; then
+    rm -rf "$CONFIG_DIR/ghostty"
+fi
+ln -s "$DOTFILES_DIR/config/ghostty" "$CONFIG_DIR/ghostty"
+
 # helix
 if [ -d "$CONFIG_DIR/helix" ]; then
     rm -rf "$CONFIG_DIR/helix"
 fi
 ln -s "$DOTFILES_DIR/config/helix" "$CONFIG_DIR/helix"
-
-# ideavim
-if [ -f "$HOME/.ideavimrc" ]; then
-    rm -rf "$HOME/.ideavimrc"
-fi
-ln -s "$DOTFILES_DIR/config/ideavim/.ideavimrc" "$HOME/.ideavimrc"
 
 # nvim
 if [ -d "$CONFIG_DIR/nvim" ]; then
@@ -54,11 +54,11 @@ if [ -d "$CONFIG_DIR/nvim" ]; then
 fi
 ln -s "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
-# wezterm
-if [ -d "$CONFIG_DIR/wezterm" ]; then
-    rm -rf "$CONFIG_DIR/wezterm"
+# starship
+if [ -f "$CONFIG_DIR/starship.toml" ]; then
+    rm -rf "$CONFIG_DIR/starhip.toml"
 fi
-ln -s "$DOTFILES_DIR/config/wezterm" "$CONFIG_DIR/wezterm"
+ln -s "$DOTFILES_DIR/config/starship.toml" "$CONFIG_DIR/starship.toml"
 
 #################
 # git directory #
